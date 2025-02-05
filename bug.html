@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is inside a div.
+  </div>
+
+  <script>
+    // Attempting to access a non-existent property of an element will not throw an error in all browsers but may lead to unexpected behavior.
+    const myDiv = document.getElementById('myDiv');
+    //The next line won't cause an error, but it's logically incorrect and might lead to unexpected behavior depending on the browser and how it handles the undefined value
+    console.log(myDiv.nonExistentProperty); 
+  </script>
+</body>
+</html>
